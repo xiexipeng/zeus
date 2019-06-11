@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:framework="http://www.framework.spring.config"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.framework.spring.config http://www.framework.spring.config.framework.xsd">
+
+    <framework:serviceConfig serviceName="test" retries="2" timeOut="1000"/>
+
+</beans>

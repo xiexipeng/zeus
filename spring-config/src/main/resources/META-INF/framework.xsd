@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:beans="http://www.springframework.org/schema/beans"
+            xmlns="http://www.framework.spring.config"
+            targetNamespace="http://www.framework.spring.config">
+
+    <xsd:import namespace="http://www.springframework.org/schema/beans"/>
+
+    <xsd:element name="serviceConfig">
+        <xsd:complexType>
+            <xsd:attribute name="serviceName" type="xsd:string"/>
+            <xsd:attribute name="retries" type="xsd:int"/>
+            <xsd:attribute name="timeOut" type="xsd:long"/>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

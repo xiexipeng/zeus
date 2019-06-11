@@ -1,0 +1,7 @@
+#app
+server:
+    port: 8081
+
+chairman:
+    app:
+      name: chairman
