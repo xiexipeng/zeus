@@ -53,5 +53,19 @@ public class OrderThread {
 ////
 ////        }
         t3.join();
+        System.out.printf("sss\n","");
+    }
+
+    public static void threadStartAndWait(Thread thread){
+        thread.start();
+        while (thread.isAlive()){
+            synchronized (thread){
+                try {
+                    thread.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
