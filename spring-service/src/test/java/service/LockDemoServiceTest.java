@@ -55,7 +55,7 @@ public class LockDemoServiceTest {
     }
 
     @Test
-    public void testLockDemoUpdate(){
+    public void testLockDemoUpdate() {
         Integer integer = lockDemoService.updateById(1L);
         System.out.println(integer);
     }
