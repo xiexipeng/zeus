@@ -15,9 +15,10 @@ public class Visibility {
 
     public static void main(String[] args) throws InterruptedException {
 //        unVisibility();
-        visibility();
+//        visibility();
 //        visibilityNoVolatile();
-//        visibilityNoVolatileByIncr();
+//        visibilityNoVolatile100();
+        visibilityNoVolatileByIncr();
     }
 
     public static void unVisibility() throws InterruptedException {
@@ -69,6 +70,27 @@ public class Visibility {
         });
         t1.start();
         Thread.sleep(10);
+
+        Thread t2 = new Thread(() -> {
+            System.out.printf("Thread %s is running...\n", Thread.currentThread().getName());
+            stop = true;
+            System.out.printf("Thread %s is end...\n", Thread.currentThread().getName());
+        });
+        t2.start();
+    }
+
+
+
+    public static void visibilityNoVolatile100() throws InterruptedException {
+        Thread t1 = new Thread(() -> {
+            System.out.printf("Thread %s is running...\n", Thread.currentThread().getName());
+            while (!stop) {
+
+            }
+            System.out.printf("Thread %s is end...\n", Thread.currentThread().getName());
+        });
+        t1.start();
+        Thread.sleep(100);
 
         Thread t2 = new Thread(() -> {
             System.out.printf("Thread %s is running...\n", Thread.currentThread().getName());
