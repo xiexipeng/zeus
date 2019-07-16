@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxp.mapper.LockDemoMapper">
+
+    <resultMap id="BaseResultMap" type="com.xxp.domin.LockDemo">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="ability" property="ability"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id as id, name as name, ability as ability
+    </sql>
+
+    <select id="queryById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select * from lock_demo where id = #{id} for update;
+    </select>
+
+    <update id="updateById" parameterType="java.lang.Long">
+        update  lock_demo set name = '11' where id = #{id};
+    </update>
+</mapper>

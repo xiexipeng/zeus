@@ -2,6 +2,21 @@
 server:
     port: 8081
 
-chairman:
-    app:
-      name: chairman
+spring:
+  application:
+    name: zeus
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zhousi?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+
+logging:
+#  config: classpath:logback-spring.xml
+  appname: ${spring.application.name}
+  level:
+    root: INFO
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.xxp.core.dal.domain
