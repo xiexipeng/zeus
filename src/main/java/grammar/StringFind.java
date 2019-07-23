@@ -1,5 +1,8 @@
 package grammar;
 
+import java.util.Arrays;
+import java.util.Stack;
+
 /**
  * <p>  </p>
  *
@@ -215,3 +218,4 @@ public class StringFind {
         System.out.println(sf.changeSpace2("my name is xiexipeng".toCharArray(), "my name is xiexipeng".length()));
         System.out.println(sf.compressBad("aabbbc"));
     }
+}
