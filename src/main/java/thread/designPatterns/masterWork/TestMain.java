@@ -37,9 +37,6 @@ public class TestMain {
 				resultMap.remove(key);
 			}
 		}
-<<<<<<< HEAD
 		System.out.println(result);
-=======
->>>>>>> add master-worker
 	}
 }
