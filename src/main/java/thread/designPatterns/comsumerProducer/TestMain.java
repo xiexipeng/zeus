@@ -1,4 +1,4 @@
-package thread.module;
+package thread.designPatterns.comsumerProducer;
 
 import java.util.LinkedList;
 import java.util.Queue;
