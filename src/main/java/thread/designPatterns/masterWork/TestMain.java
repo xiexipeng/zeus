@@ -37,5 +37,6 @@ public class TestMain {
 				resultMap.remove(key);
 			}
 		}
+		System.out.println(result);
 	}
 }
