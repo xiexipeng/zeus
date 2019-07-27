@@ -9,7 +9,7 @@ import java.util.Set;
  * @Time: 下午5:30
  * @Description:
  */
-public class TestMain {
+public class MasterMainTest {
 
 	public static void main(String[] args) {
 		Master master = new Master(new PlusWorker(), 5);

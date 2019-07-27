@@ -8,10 +8,11 @@ package thread.threadpool.mythreadpool;
  */
 public class ThreadPoolTestMain {
 
-	public static void main(String[] args) {
-		ThreadPool threadPool = ThreadPool.getThreadPool();
-		for (int i = 0; i < 5; i++) {
-			threadPool.start(new MyJob("MyJob_"+i));
-		}
-	}
+    public static void main(String[] args) {
+        ThreadPool threadPool = ThreadPool.getThreadPool();
+        for (int i = 0; i < 1000; i++) {
+            threadPool.start(new MyJob("MyJob_" + i));
+        }
+//        threadPool.shutdown();
+    }
 }

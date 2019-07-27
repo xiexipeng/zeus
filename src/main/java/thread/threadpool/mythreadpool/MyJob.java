@@ -18,6 +18,7 @@ public class MyJob implements Runnable{
 	public void run() {
 		try {
 			// 模拟任务的执行
+			System.out.println(String.format("Current %s is running",Thread.currentThread().getName()));
 			Thread.sleep(100);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
