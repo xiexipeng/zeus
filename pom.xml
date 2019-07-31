@@ -19,9 +19,24 @@
         <module>spring-service</module>
     </modules>
 
+    <properties>
+        <mysql-connector-version>5.1.46</mysql-connector-version>
+        <mybatis-plus-version>2.3.3</mybatis-plus-version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-version}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
