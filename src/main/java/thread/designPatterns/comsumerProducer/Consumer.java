@@ -1,21 +1,20 @@
-package thread.module;
+package thread.designPatterns.comsumerProducer;
 
 import java.util.Queue;
-import java.util.Random;
 
 /**
- * <p> 生产者 </p>
+ * <p>  </p>
  *
  * @author zhousi@maihaoche.com
- * @date 2019/4/14 下午2:20
+ * @date 2019/4/14 下午2:34
  * @Version
  */
-public class Producer implements Runnable {
+public class Consumer implements  Runnable {
 
     private int maxSize;
     private Queue<Integer> queue;
 
-    public Producer(int maxSize, Queue<Integer> queue) {
+    public Consumer(int maxSize, Queue<Integer> queue) {
         this.maxSize = maxSize;
         this.queue = queue;
     }
@@ -24,18 +23,16 @@ public class Producer implements Runnable {
     public void run() {
         while (true){
             synchronized (queue){
-                while (maxSize == queue.size()){
-                    System.out.println("queue is full");
+                while (queue.isEmpty()){
                     try {
                         queue.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
+                    System.out.println("queue is empty");
                 }
-                Random random = new Random();
-                int i  = random.nextInt();
-                queue.add(i);
-                System.out.println("queue size is :"+queue.size());
+                int i  = queue.remove();
+                System.out.println("comsumer: "+i);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -45,5 +42,4 @@ public class Producer implements Runnable {
             }
         }
     }
-
 }
