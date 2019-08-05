@@ -21,30 +21,30 @@ import javax.sql.DataSource;
 public class DatasourceConfig {
 
     @Bean
-    @Qualifier("datasourceTx1")
-    @ConfigurationProperties("spring.datasource.tx1")
+    @Qualifier("accountDatasource")
+    @ConfigurationProperties("spring.datasource.account")
     public DataSource getDataSourceTx1(){
         return DataSourceBuilder.create().build();
     }
 
     @Bean
-    @Qualifier("jdbcTemplateTx1")
-    public JdbcTemplate getJdbcTemplateTx1(@Qualifier("datasourceTx1") DataSource dataSource){
+    @Qualifier("accountJdbcTemplate")
+    public JdbcTemplate getaccountJdbcTemplate(@Qualifier("accountDatasource") DataSource dataSource){
         return new JdbcTemplate(dataSource);
     }
 
 
     @Bean
     @Primary
-    @Qualifier("datasourceTx2")
-    @ConfigurationProperties("spring.datasource.tx2")
+    @Qualifier("orderDatasource")
+    @ConfigurationProperties("spring.datasource.order")
     public DataSource getDataSourceTx2(){
         return DataSourceBuilder.create().build();
     }
 
     @Bean
-    @Qualifier("jdbcTemplateTx2")
-    public JdbcTemplate getJdbcTemplate(@Qualifier("datasourceTx2") DataSource dataSource){
+    @Qualifier("orderJdbcTemplate")
+    public JdbcTemplate getJdbcTemplate(@Qualifier("orderDatasource") DataSource dataSource){
         return new JdbcTemplate(dataSource);
     }
 }

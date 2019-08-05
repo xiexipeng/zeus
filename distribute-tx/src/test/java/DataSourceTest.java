@@ -12,20 +12,20 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public class DataSourceTest extends BaseTest {
 
-    private static final String testSql = "insert into account (name, phone, amount) values ('xxp','15158890800',20)";
+    private static final String testSql = "insert into account (name, phone, deposit) values ('xxp','15158890800',20)";
 
     @Autowired
-    @Qualifier("jdbcTemplateTx1")
-    private JdbcTemplate jdbcTemplateTx1;
+    @Qualifier("accountJdbcTemplate")
+    private JdbcTemplate accountJdbcTemplate;
 
 
     @Autowired
-    @Qualifier("jdbcTemplateTx2")
-    private JdbcTemplate jdbcTemplateTx2;
+    @Qualifier("orderJdbcTemplate")
+    private JdbcTemplate orderJdbcTemplate;
 
     @Test
-    public void testJdbcTemplateTx1(){
-        jdbcTemplateTx1.update(testSql);
-        jdbcTemplateTx2.update(testSql);
+    public void testaccountJdbcTemplate(){
+        accountJdbcTemplate.update(testSql);
+        orderJdbcTemplate.update(testSql);
     }
 }
