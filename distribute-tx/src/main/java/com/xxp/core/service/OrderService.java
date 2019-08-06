@@ -27,7 +27,7 @@ public class OrderService {
 
     private static final String SQL_UPDATE_DEPOSIT = "update account set deposit = deposit - ? where id = ?";
 
-    private static final String SQL_INSERT_ORDER = "insert into order (id, order_no, amount, account_id) values (?, ?, ?, ?)";
+    private static final String SQL_INSERT_ORDER = "insert into `order` (id, order_no, amount, account_id) values (?, ?, ?, ?)";
 
     @Transactional(rollbackFor = Exception.class)
     public void createOrder(Order order) {
