@@ -32,6 +32,12 @@ public class OrderService {
     @Transactional(rollbackFor = Exception.class)
     public void createOrder(Order order) {
         accountJdbcTemplate.update(SQL_UPDATE_DEPOSIT, order.getAmount(), order.getAccountId());
+        if (order.getOrderNo().contains("error1")) {
+            throw new RuntimeException("Error1");
+        }
         orderJdbcTemplate.update(SQL_INSERT_ORDER, order.getId(), order.getOrderNo(), order.getAmount(), order.getAccountId());
+        if (order.getOrderNo().contains("error2")) {
+            throw new RuntimeException("Error2");
+        }
     }
 }
