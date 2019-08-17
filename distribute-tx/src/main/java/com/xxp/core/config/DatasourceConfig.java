@@ -6,7 +6,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.transaction.ChainedTransactionManager;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 
@@ -33,7 +36,6 @@ public class DatasourceConfig {
         return new JdbcTemplate(dataSource);
     }
 
-
     @Bean
     @Primary
     @Qualifier("orderDatasource")
@@ -46,5 +48,17 @@ public class DatasourceConfig {
     @Qualifier("orderJdbcTemplate")
     public JdbcTemplate getJdbcTemplate(@Qualifier("orderDatasource") DataSource dataSource){
         return new JdbcTemplate(dataSource);
+    }
+
+    /**
+     * 链式事务管理器
+     * @return
+     */
+    @Bean
+    PlatformTransactionManager transactionManager(){
+        DataSourceTransactionManager accountTM = new DataSourceTransactionManager(getDataSourceTx1());
+        DataSourceTransactionManager orderTM = new DataSourceTransactionManager(getDataSourceTx2());
+        ChainedTransactionManager transactionManager = new ChainedTransactionManager(accountTM,orderTM);
+        return transactionManager;
     }
 }
