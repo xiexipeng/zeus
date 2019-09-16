@@ -40,5 +40,13 @@
 
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.jboss.classpool/jboss-classpool -->
+        <dependency>
+            <groupId>org.jboss.classpool</groupId>
+            <artifactId>jboss-classpool</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+    </dependencies>
 
 </project>
