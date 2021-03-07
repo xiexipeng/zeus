@@ -47,6 +47,7 @@ public class DelayQueueSchedule {
             List<String> list = objects.stream().map(String::valueOf).collect(Collectors.toList());
             RBlockingQueue<Object> blockingQueue = redissonClient.getBlockingQueue(DelayQueueConstant.PRE_JOB_QUEUE_KEY);
             blockingQueue.addAll(list);
+            // TODO 如果此时程序崩溃，job已经被添加到处理池中被处理，下次重启将会再次添加这个任务到处理池中，出现一个任务被调度多次到情况
             scoredSortedSet.removeAllAsync(list);
         } catch (Exception e) {
             log.warn("延迟队列调度异常", e);
