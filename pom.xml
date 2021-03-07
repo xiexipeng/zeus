@@ -10,13 +10,12 @@
         <version>1.5.13.RELEASE</version>
     </parent>
 
-    <groupId>com.xxp.zeus</groupId>
+    <groupId>com.xxp</groupId>
     <artifactId>zeus</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>spring-config</module>
-        <module>spring-service</module>
+        <module>delay-queue</module>
     </modules>
 
     <properties>
@@ -42,11 +41,11 @@
     </dependencyManagement>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.jboss.classpool/jboss-classpool -->
-        <dependency>
-            <groupId>org.jboss.classpool</groupId>
-            <artifactId>jboss-classpool</artifactId>
-            <version>1.0.0.GA</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.classpool</groupId>-->
+<!--            <artifactId>jboss-classpool</artifactId>-->
+<!--            <version>1.0.0.GA</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>
