@@ -1,4 +1,4 @@
-package jvm.gc;
+package gc;
 
 /**
  * @author: xiexipeng@u51.com

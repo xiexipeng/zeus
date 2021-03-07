@@ -1,4 +1,4 @@
-package jvm.gc;
+package gc;
 
 import thread.ClassPool;
 
@@ -12,9 +12,6 @@ public class TestPermSize {
 
     public static void main(String[] args) {
         int i =0;
-        for ( i = 0; i <= Integer.MAX_VALUE; i++) {
-            ClassPool
 
-        }
     }
 }
