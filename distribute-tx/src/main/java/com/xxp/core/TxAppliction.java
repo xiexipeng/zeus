@@ -20,7 +20,7 @@ public class TxAppliction {
         SpringApplication.run(TxAppliction.class, args);
     }
 
-    @RequestMapping("/test")
+    @RequestMapping("/Object")
     public String health() {
         return "success";
     }

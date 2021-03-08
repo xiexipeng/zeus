@@ -17,5 +17,17 @@ public class FloatEquals {
         Float x = Float.valueOf(f1);
         Float y = Float.valueOf(f2);
         System.out.println(x.equals(y));
+
+        int i = 1;
+        test1(i);
+        System.out.println("a".hashCode());
+    }
+
+    public static void test1(long i){
+        System.out.println(".......");
+    }
+
+    public static void test1(Integer i){
+        System.out.println(">>>>>");
     }
 }
