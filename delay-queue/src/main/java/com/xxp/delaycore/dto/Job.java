@@ -36,7 +36,17 @@ public class Job {
     /**
      * job异常执行的重试次数
      */
-    private Integer retry;
+    private Integer retry = 0;
+
+    /**
+     * 最大重试次数
+     */
+    private Integer maxRetry;
+
+    /**
+     * job异常执行的重试时间间隔
+     */
+    private Long retryInterval;
 
     public String getTopicId() {
         return this.topic + ":" + this.jobId;

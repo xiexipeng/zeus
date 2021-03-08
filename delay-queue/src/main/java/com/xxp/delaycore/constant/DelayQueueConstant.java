@@ -14,9 +14,15 @@ public class DelayQueueConstant {
 
     public final static String PRE_JOB_QUEUE_KEY = "PRE_JOB_QUEUE";
 
-    public final static String DISTRIBUTE_LOCK_KEY = "DELAY_JOB_LOCK_KEY";
+    public final static String PRE_JOB_BACK_QUEUEU_KEY = "PRE_JOB_BACK_QUEUE";
+
+    public final static String SCHEDULE_DISTRIBUTE_LOCK_KEY = "DELAY_JOB_LOCK_KEY";
+
+    public final static String CONSUMER_DISTRIBUTE_LOCK_KEY = "CONSUMER_JOB_LOCK_KEY";
 
     public final static Integer LOCK_WAIT_TIME = 3;
 
-    public final static Integer LOCK_LEASE_TIME = 61;
+    public final static Integer SHCEDULE_LOCK_LEASE_TIME = 60;
+
+    public final static Integer CONSUMER_LOCK_LEASE_TIME = 61;
 }
