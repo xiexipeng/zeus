@@ -18,7 +18,7 @@ public class ThreadPoolTest {
 			executorService.execute(new Thread("Mythread_"+i){
 				@Override
 				public void run() {
-					System.out.println("test");
+					System.out.println("Object");
 				}
 			});
 		}
