@@ -32,11 +32,11 @@ public class DelayQueueSchedule {
      * 获取延迟队列里的topicId
      */
     @Scheduled(cron = "*/1 * * * * *")
-    public void carryJobSchduel() {
+    public void carryJobSchedule() {
         RLock lock = redissonClient.getLock(DelayQueueConstant.SCHEDULE_DISTRIBUTE_LOCK_KEY);
         boolean isLock = false;
         try {
-            isLock = lock.tryLock(DelayQueueConstant.LOCK_WAIT_TIME, DelayQueueConstant.SHCEDULE_LOCK_LEASE_TIME, TimeUnit.SECONDS);
+            isLock = lock.tryLock(DelayQueueConstant.LOCK_WAIT_TIME, DelayQueueConstant.SCHEDULE_LOCK_LEASE_TIME, TimeUnit.SECONDS);
             if (!isLock) {
                 return;
             }

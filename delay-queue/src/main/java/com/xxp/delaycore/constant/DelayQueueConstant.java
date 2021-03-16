@@ -10,7 +10,7 @@ public class DelayQueueConstant {
 
     public final static String SORTED_JOB_QUEUE_KEY = "SORTED_JOB_QUEUE";
 
-    public final static String JOB_POOL_KEY ="TOPIC_JOB_POOL";
+    public final static String JOB_POOL_KEY = "TOPIC_JOB_POOL";
 
     public final static String PRE_JOB_QUEUE_KEY = "PRE_JOB_QUEUE";
 
@@ -22,7 +22,7 @@ public class DelayQueueConstant {
 
     public final static Integer LOCK_WAIT_TIME = 3;
 
-    public final static Integer SHCEDULE_LOCK_LEASE_TIME = 60;
+    public final static Integer SCHEDULE_LOCK_LEASE_TIME = 60;
 
     public final static Integer CONSUMER_LOCK_LEASE_TIME = 80;
 

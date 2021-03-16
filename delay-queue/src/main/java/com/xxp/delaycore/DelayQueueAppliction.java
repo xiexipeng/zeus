@@ -2,6 +2,7 @@ package com.xxp.delaycore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @author: xiexipeng@u51.com
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @description:
  * @Version
  **/
+@EnableScheduling
 @SpringBootApplication
 public class DelayQueueAppliction {
 

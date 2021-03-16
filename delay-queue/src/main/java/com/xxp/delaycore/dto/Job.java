@@ -2,6 +2,7 @@ package com.xxp.delaycore.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Map;
 
 /**
@@ -11,7 +12,9 @@ import java.util.Map;
  * @Version V1.0
  **/
 @Data
-public class Job {
+public class Job implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * jobID，标示唯一一个延迟任务

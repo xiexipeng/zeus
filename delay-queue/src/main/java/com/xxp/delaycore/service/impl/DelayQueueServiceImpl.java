@@ -27,7 +27,7 @@ public class DelayQueueServiceImpl implements DelayQueueService {
     @Override
     public Boolean addJob(Job job) {
         try {
-            RMap<Object, Object> jobMap = redissonClient.getMap(DelayQueueConstant.JOB_POOL_KEY);
+            RMap<String, Object> jobMap = redissonClient.getMap(DelayQueueConstant.JOB_POOL_KEY);
             String topicId = job.getTopicId();
             if (jobMap.get(topicId) != null){
                 log.warn("job已经存在，请不要重复添加, job:{}", JSONObject.toJSONString(job));
@@ -46,7 +46,7 @@ public class DelayQueueServiceImpl implements DelayQueueService {
     @Override
     public Boolean deleteJob(String topic, Long jobId) {
         try {
-            RMap<Object, Object> jobMap = redissonClient.getMap(DelayQueueConstant.JOB_POOL_KEY);
+            RMap<String, Object> jobMap = redissonClient.getMap(DelayQueueConstant.JOB_POOL_KEY);
             RScoredSortedSet<Object> scoredSortedSet = redissonClient.getScoredSortedSet(DelayQueueConstant.SORTED_JOB_QUEUE_KEY);
             String topicId = getTopicId(topic, jobId);
             jobMap.remove(topicId);
