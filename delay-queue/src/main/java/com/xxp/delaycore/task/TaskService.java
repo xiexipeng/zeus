@@ -10,5 +10,5 @@ import com.xxp.delaycore.dto.Job;
  **/
 public interface TaskService<T> {
 
-    T doTask(Job job);
+    T process(Job job);
 }

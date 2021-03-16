@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import java.util.Map;
 import java.util.concurrent.*;
 
 /**
@@ -28,7 +29,7 @@ public class PreQueueJobConsumer implements InitializingBean {
     private RedissonClient redissonClient;
 
     @Autowired
-    private TaskService taskService;
+    private Map<String, TaskService> taskServiceMap;
 
     private static final ThreadFactory threadFactory = new ThreadFactoryBuilder()
             .setNameFormat("delay-job-consumer-thread-%d")
@@ -39,6 +40,7 @@ public class PreQueueJobConsumer implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() {
+        log.info("延迟任务消费者线程启动");
         new Thread("Topic_Consumer_Thread") {
             @Override
             public void run() {
@@ -50,10 +52,11 @@ public class PreQueueJobConsumer implements InitializingBean {
     private void consumer() {
         while (true) {
             RLock lock = null;
+            boolean isLock = false;
             try {
                 lock = redissonClient.getLock(DelayQueueConstant.CONSUMER_DISTRIBUTE_LOCK_KEY);
                 // 锁超时时间需要大于阻塞队列poll的阻塞时间
-                boolean isLock = lock.tryLock(DelayQueueConstant.LOCK_WAIT_TIME, DelayQueueConstant.CONSUMER_LOCK_LEASE_TIME, TimeUnit.SECONDS);
+                isLock = lock.tryLock(DelayQueueConstant.LOCK_WAIT_TIME, DelayQueueConstant.CONSUMER_LOCK_LEASE_TIME, TimeUnit.SECONDS);
                 if (!isLock) {
                     continue;
                 }
@@ -61,7 +64,7 @@ public class PreQueueJobConsumer implements InitializingBean {
             } catch (Exception e) {
                 log.warn("job消费者执行异常", e);
             } finally {
-                if (lock != null) {
+                if (lock != null && isLock) {
                     try {
                         lock.unlock();
                     } catch (Exception e) {
@@ -76,11 +79,12 @@ public class PreQueueJobConsumer implements InitializingBean {
         RBlockingQueue<String> blockingQueue = redissonClient.getBlockingQueue(DelayQueueConstant.PRE_JOB_QUEUE_KEY);
         String topicId = blockingQueue.pollLastAndOfferFirstTo(DelayQueueConstant.PRE_JOB_BACK_QUEUEU_KEY, 60, TimeUnit.SECONDS);
         if (StringUtils.isEmpty(topicId)) {
+            log.info("获取topicid为空");
             return;
         }
         RMap<String, Job> jobPool = redissonClient.getMap(DelayQueueConstant.JOB_POOL_KEY);
         Job job = jobPool.get(topicId);
-        CompletableFuture.supplyAsync(() -> taskService.doTask(job), threadPoolExecutor).handle((v, e) -> {
+        CompletableFuture.supplyAsync(() -> taskServiceMap.get(job.getTopic()).process(job), threadPoolExecutor).handle((v, e) -> {
             if (e != null && e instanceof DelayQueueRetryException) {
                 Integer retry = job.getRetry();
                 if (retry > job.getMaxRetry()) {
@@ -104,5 +108,24 @@ public class PreQueueJobConsumer implements InitializingBean {
             queue.remove(topicId);
             return true;
         });
+    }
+
+    public static void main(String[] args) {
+        int i = 1;
+        while (i < 5) {
+            i = i + 1;
+            System.out.println(i);
+            try {
+                if (i > 3) {
+                    System.out.println("....");
+                    continue;
+                }
+                System.out.println("<>>>>");
+            } catch (Exception e) {
+
+            } finally {
+                System.out.println("/////");
+            }
+        }
     }
 }

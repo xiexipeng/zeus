@@ -34,9 +34,10 @@ public class DelayQueueSchedule {
     @Scheduled(cron = "*/1 * * * * *")
     public void carryJobSchduel() {
         RLock lock = redissonClient.getLock(DelayQueueConstant.SCHEDULE_DISTRIBUTE_LOCK_KEY);
+        boolean isLock = false;
         try {
-            boolean tryLock = lock.tryLock(DelayQueueConstant.LOCK_WAIT_TIME, DelayQueueConstant.SHCEDULE_LOCK_LEASE_TIME, TimeUnit.SECONDS);
-            if (!tryLock) {
+            isLock = lock.tryLock(DelayQueueConstant.LOCK_WAIT_TIME, DelayQueueConstant.SHCEDULE_LOCK_LEASE_TIME, TimeUnit.SECONDS);
+            if (!isLock) {
                 return;
             }
             long currentTimeMillis = System.currentTimeMillis();
@@ -51,9 +52,10 @@ public class DelayQueueSchedule {
         } catch (Exception e) {
             log.warn("延迟队列调度异常", e);
         } finally {
-            if (lock != null) {
+            if (lock != null && isLock) {
                 lock.unlock();
             }
         }
     }
+
 }

@@ -24,5 +24,7 @@ public class DelayQueueConstant {
 
     public final static Integer SHCEDULE_LOCK_LEASE_TIME = 60;
 
-    public final static Integer CONSUMER_LOCK_LEASE_TIME = 61;
+    public final static Integer CONSUMER_LOCK_LEASE_TIME = 80;
+
+    public final static String TEST_TOPIC = "test_topic";
 }

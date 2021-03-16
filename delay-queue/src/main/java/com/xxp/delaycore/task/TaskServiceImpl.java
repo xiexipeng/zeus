@@ -1,9 +1,8 @@
 package com.xxp.delaycore.task;
 
+import com.xxp.delaycore.constant.DelayQueueConstant;
 import com.xxp.delaycore.dto.Job;
 import lombok.extern.slf4j.Slf4j;
-import org.redisson.api.RedissonClient;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,14 +12,12 @@ import org.springframework.stereotype.Component;
  * @Version
  **/
 @Slf4j
-@Component("test_topic")
-public class TaskServiceImpl implements TaskService<Boolean> {
-
-    @Autowired
-    private RedissonClient redissonClient;
+@Component(DelayQueueConstant.TEST_TOPIC)
+public class TaskServiceImpl extends AbstractTaskService<Boolean> {
 
     @Override
-    public Boolean doTask(Job job) {
+    public Boolean doProcess(Job job) {
+        log.info("job任务执行完毕, topicId:[{}]", job.getTopicId());
         return true;
     }
 
