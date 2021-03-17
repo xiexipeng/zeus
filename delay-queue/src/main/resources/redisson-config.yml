@@ -27,5 +27,6 @@ singleServerConfig:
 #  masterName: "mymaster"
 threads: 0
 nettyThreads: 0
-codec: !<org.redisson.client.codec.StringCodec> {}
+#codec: !<org.redisson.client.codec.StringCodec> {}
+codec: !<org.redisson.codec.JsonJacksonCodec> {}
 "transportMode": "NIO"

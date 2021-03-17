@@ -1,6 +1,7 @@
 package com.xxp.redisson;
 
 import com.xxp.BaseTest;
+import com.xxp.core.dto.Job;
 import org.junit.jupiter.api.Test;
 import org.redisson.api.RMap;
 import org.redisson.api.RedissonClient;
@@ -19,7 +20,17 @@ public class RedissonTest extends BaseTest {
 
     @Test
     public void test(){
-        RMap<String, Object> test_map = client.getMap("test_map");
-        test_map.put("test","11");
+        RMap<String, Job> test_map = client.getMap("test_map");
+        Job job = new Job();
+        job.setJobId(146L);
+        test_map.put("test",job);
+    }
+
+    @Test
+    public void testGet(){
+        RMap<String, Job> map = client.getMap("test_map");
+        Job test = map.get("test");
+        System.out.println(test);
+        assert test.getJobId() == 146L;
     }
 }

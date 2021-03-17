@@ -16,6 +16,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>delay-queue</module>
+        <module>base</module>
     </modules>
 
     <properties>
@@ -37,15 +38,25 @@
                 <version>${mysql-connector-version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>1.9.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.58</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.jboss.classpool/jboss-classpool -->
-<!--        <dependency>-->
-<!--            <groupId>org.jboss.classpool</groupId>-->
-<!--            <artifactId>jboss-classpool</artifactId>-->
-<!--            <version>1.0.0.GA</version>-->
-<!--        </dependency>-->
-    </dependencies>
 
 </project>

@@ -1,7 +1,6 @@
 package com.xxp;
 
-import com.xxp.delaycore.DelayQueueAppliction;
-import org.junit.jupiter.api.Test;
+import com.xxp.core.DelayQueueAppliction;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
