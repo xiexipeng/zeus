@@ -1,4 +1,4 @@
-package algorithms.stack;
+package com.xxp.algorithms.stack;
 
 import java.util.HashMap;
 import java.util.Map;

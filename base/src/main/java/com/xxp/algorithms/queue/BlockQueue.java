@@ -1,4 +1,4 @@
-package algorithms.queue;
+package com.xxp.algorithms.queue;
 
 import java.util.ArrayList;
 import java.util.List;

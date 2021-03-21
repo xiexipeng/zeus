@@ -51,9 +51,20 @@ public class Job implements Serializable {
      */
     private Long retryInterval;
 
-    private Long createTime = System.currentTimeMillis();
-
+    /**
+     * 任务下次执行时间
+     */
     private Long nextExecuteTime;
+
+    /**
+     * 任务执行超时时间,默认60秒,备份任务队列中的任务超过此超时时间还未执行完，则执行补偿任务
+     */
+    private Long processTimeOut = 60000L;
+
+    /**
+     * 任务创建时间
+     */
+    private Long createTime = System.currentTimeMillis();
 
     public String getTopicId() {
         return this.topic + ":" + this.jobId;

@@ -1,4 +1,4 @@
-package algorithms;
+package com.xxp.algorithms;
 
 /**
  * <p> 我的HashMap </p>

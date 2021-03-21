@@ -1,4 +1,4 @@
-package algorithms;
+package com.xxp.algorithms;
 
 import java.util.Random;
 

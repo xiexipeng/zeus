@@ -1,4 +1,4 @@
-package algorithms;
+package com.xxp.algorithms;
 
 /**
  * @Author: xiexipeng

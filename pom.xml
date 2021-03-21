@@ -15,8 +15,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>delay-queue</module>
         <module>base</module>
+        <module>delay-queue</module>
+        <module>distribute-schedule</module>
     </modules>
 
     <properties>
