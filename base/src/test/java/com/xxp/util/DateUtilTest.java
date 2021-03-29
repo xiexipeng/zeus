@@ -67,4 +67,9 @@ public class DateUtilTest {
     public void test_truncate(){
         System.out.println(DateUtil.truncate(LocalDateTime.now(),ChronoUnit.HOURS));
     }
+
+    @Test
+    public void test_parseByDefault(){
+        System.out.println(DateUtil.parse("2021-03-25T14:50:47.000+08","yyyy-MM-dd'T'HH:mm:ss.SSS+08"));
+    }
 }

@@ -45,6 +45,7 @@ public class DateUtil {
     /**
      * 自定义格式解析
      * 示例formatter: yyyy/MM/dd HH:mm:ss
+     * 示例formatter: yyyy-MM-dd'T'HH:mm:ss.SSS+08, 对应时间字符串: 2021-03-25T14:50:47.000+08
      *
      * @param time
      * @param formatter
