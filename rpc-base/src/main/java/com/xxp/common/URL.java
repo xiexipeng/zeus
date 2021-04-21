@@ -28,4 +28,8 @@ public class URL {
     private Object[] arguments;
 
     private Map<Object, Object> param;
+
+    public String getAddress() {
+        return ip + ":" + port;
+    }
 }
