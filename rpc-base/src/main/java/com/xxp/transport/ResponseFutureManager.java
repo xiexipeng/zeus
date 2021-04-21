@@ -1,13 +1,12 @@
 package com.xxp.transport;
 
-import com.xxp.common.URL;
 import io.netty.channel.Channel;
+import io.netty.util.AttributeKey;
 import io.netty.util.HashedWheelTimer;
 import io.netty.util.Timeout;
 import io.netty.util.TimerTask;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
@@ -24,8 +23,9 @@ import java.util.concurrent.atomic.AtomicLong;
 public class ResponseFutureManager {
 
     private static final AtomicLong nextId = new AtomicLong(0);
-    private static final Map<Long, Channel> channelMap = new ConcurrentHashMap<>();
-    private static final Map<Long, ResponseFuture> futureMap = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<Long, Channel> channelMap = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<Long, ResponseFuture> futureMap = new ConcurrentHashMap<>();
+    private static final AttributeKey<Object> DEFAULT_ATTRIBUTE = AttributeKey.valueOf("future-attribute");
 
     private static final ThreadFactory threadFactory = new ThreadFactory() {
 
@@ -48,6 +48,7 @@ public class ResponseFutureManager {
         channelMap.put(id, channel);
         futureMap.put(id, future);
         outTimer.newTimeout(new TimeoutTask(id), timeout, TimeUnit.MILLISECONDS);
+        channel.attr(DEFAULT_ATTRIBUTE).set(future);
         return future;
     }
 
@@ -82,7 +83,7 @@ public class ResponseFutureManager {
                 log.warn("根据requestId:{}获取future为空", requestId);
                 return;
             }
-            future.completeExceptionally(new RuntimeException("请求超时"));
+            future.received(null, new RuntimeException("请求超时"));
         }
     }
 
