@@ -29,7 +29,7 @@ public class DateUtilTest {
         Date dateTimeByTimeMillis = DateUtil.getDateTimeByTimeMillis(timeMillis);
         System.out.println(dateTimeByTimeMillis);
     }
-
+    
     @Test
     public void test_getTimeMillisByTime(){
         System.out.println(DateUtil.getTimeMillisByTime(LocalDateTime.now()));
@@ -69,7 +69,12 @@ public class DateUtilTest {
     }
 
     @Test
-    public void test_parseByDefault(){
+    public void test_parse(){
         System.out.println(DateUtil.parse("2021-03-25T14:50:47.000+08","yyyy-MM-dd'T'HH:mm:ss.SSS+08"));
+    }
+
+    @Test
+    public void test_parseByDefault(){
+        System.out.println(DateUtil.parseByDefault("2021-03-25T14:50:47.000"));
     }
 }
