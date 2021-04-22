@@ -1,4 +1,4 @@
-
+package gc;
 
 //import sun.jvm.hotspot.gc_implementation.parallelScavenge.PSYoungGen;
 //import sun.jvm.hotspot.gc_implementation.parallelScavenge.ParallelScavengeHeap;
@@ -22,7 +22,7 @@ public class TestPrintPSPermGen
 {
 
 //	public static void main(String[] args) {
-//		TestPrintPSPermGen test = new TestPrintPSPermGen();
+//		gc.TestPrintPSPermGen test = new gc.TestPrintPSPermGen();
 //		test.execute(args);
 //		test.stop();
 //	}
