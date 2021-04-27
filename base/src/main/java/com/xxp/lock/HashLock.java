@@ -1,4 +1,4 @@
-package thread;
+package com.xxp.lock;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
@@ -7,31 +7,25 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author: xiexipeng@u51.com
- * @create: 2021/04/14 11:44:15
- * @description: 分段key锁
- * @Version V1.0
+ * @create: 2021/04/26 17:53:31
+ * @description:
+ * @Version
  **/
-public class SegmentLock {
+public class HashLock implements com.xxp.lock.Lock {
 
-    private int segment = 16;
+    private final ConcurrentHashMap<String, Lock> lockMap = new ConcurrentHashMap<>();
 
-    private ConcurrentHashMap<Integer, Lock> concurrentHashMap = new ConcurrentHashMap<>();
-
-    public SegmentLock() {
-    }
-
-    public SegmentLock(int segment) {
-        this.segment = segment;
-    }
-
+    @Override
     public void lock(String key) {
         getLock(key).lock();
     }
 
+    @Override
     public boolean tryLock(String key) {
         return getLock(key).tryLock();
     }
 
+    @Override
     public boolean tryLock(String key, long time, TimeUnit unit) throws InterruptedException {
         return getLock(key).tryLock(time, unit);
     }
@@ -41,13 +35,21 @@ public class SegmentLock {
      *
      * @param key
      */
+    @Override
     public void unLock(String key) {
-        getLock(key).unlock();
+        ReentrantLock lock = (ReentrantLock) getLock(key);
+        int holdCount = lock.getQueueLength();
+        lock.unlock();
+        if (holdCount < 1) {
+            removeLock(key);
+        }
     }
 
     private Lock getLock(String key) {
-        // 存在hash碰撞，可能导致不同key获取到相同的锁
-        int index = key.hashCode() % segment;
-        return concurrentHashMap.computeIfAbsent(index, o -> new ReentrantLock());
+        return lockMap.computeIfAbsent(key, o -> new ReentrantLock());
+    }
+
+    private Lock removeLock(String key) {
+        return lockMap.remove(key);
     }
 }

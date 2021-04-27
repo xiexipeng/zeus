@@ -1,4 +1,4 @@
-package thread;
+package thread.alterprint;
 
 /**
  * <p> 交替打印奇偶数 </p>
