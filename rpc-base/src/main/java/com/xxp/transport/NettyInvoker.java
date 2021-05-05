@@ -2,6 +2,7 @@ package com.xxp.transport;
 
 import com.xxp.common.URL;
 import com.xxp.server.Server;
+import io.netty.channel.ChannelFuture;
 
 /**
  * @author: xiexipeng@u51.com
@@ -18,6 +19,7 @@ public class NettyInvoker {
     }
 
     public ResponseFuture invoke(Server server, URL url){
+        ChannelFuture future = nettyClient.getChannel().write(url.getParam());
         return null;
     }
 }

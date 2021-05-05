@@ -1,8 +1,11 @@
 package com.xxp.transport;
 
+import com.xxp.common.URL;
+import com.xxp.util.NamedThreadFactory;
+import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.Channel;
+import io.netty.channel.nio.NioEventLoopGroup;
 import lombok.extern.slf4j.Slf4j;
-
-import java.nio.channels.Channel;
 
 /**
  * @author: xiexipeng@u51.com
@@ -15,7 +18,28 @@ public class NettyClient {
 
     private Channel channel;
 
-    private void connect(){
+    public NettyClient(URL url) {
+        init(url);
+    }
 
+    public void init(URL url){
+        // 1.创建bootstrap
+        // 2.设置handle
+    }
+
+    public Channel connect(){
+        // 3.返回channel
+        return null;
+    }
+
+    public boolean isConnected(){
+        if (channel != null && channel.isActive()){
+            return true;
+        }
+        return false;
+    }
+
+    public Channel getChannel(){
+        return channel;
     }
 }

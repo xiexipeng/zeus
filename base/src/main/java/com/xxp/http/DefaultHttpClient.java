@@ -1,8 +1,8 @@
 package com.xxp.http;
 
-import cn.hutool.core.util.RandomUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.xxp.util.MapUtil;
+import com.xxp.util.RandomUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.asynchttpclient.*;
 import org.asynchttpclient.request.body.multipart.FilePart;
@@ -22,7 +22,7 @@ import java.util.concurrent.ExecutionException;
 @Slf4j
 public class DefaultHttpClient implements HttpClient {
 
-//    private static final String BOUNDARY = "--------------------XXP_" + RandomUtil.randomString(16);
+    private static final String BOUNDARY = "--------------------XXP_" + RandomUtil.getRandomString(16);
 
     private AsyncHttpClient httpClient = new DefaultAsyncHttpClient();
 
@@ -144,7 +144,7 @@ public class DefaultHttpClient implements HttpClient {
         }
         // 上传文件输入流
         if (request.getFile() != null) {
-//            builder.setHeader("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
+            builder.setHeader("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
             builder.setBodyParts(Arrays.asList(new FilePart("filename", request.getFile())));
             return builder.build();
         }

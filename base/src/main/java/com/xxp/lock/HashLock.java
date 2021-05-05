@@ -40,6 +40,7 @@ public class HashLock implements com.xxp.lock.Lock {
         ReentrantLock lock = (ReentrantLock) getLock(key);
         int holdCount = lock.getQueueLength();
         lock.unlock();
+        // 可能存在内存泄漏，如果获取队列数大于1，此时队列节点恰好过期，则remove方法不会被执行
         if (holdCount < 1) {
             removeLock(key);
         }

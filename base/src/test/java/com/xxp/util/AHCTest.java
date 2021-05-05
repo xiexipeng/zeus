@@ -1,4 +1,6 @@
-package com.xxp.http;
+package com.xxp.util;
+
+
 
 import org.asynchttpclient.*;
 import org.junit.Test;
