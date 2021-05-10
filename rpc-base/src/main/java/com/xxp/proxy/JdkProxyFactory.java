@@ -1,5 +1,8 @@
 package com.xxp.proxy;
 
+import com.xxp.common.URL;
+import com.xxp.service.Invoker;
+
 import java.lang.reflect.Proxy;
 
 /**
@@ -11,8 +14,8 @@ import java.lang.reflect.Proxy;
 public class JdkProxyFactory implements ProxyFactory {
 
     @Override
-    public <T> T getProxy(Class<T> tClass) {
-        return (T) Proxy.newProxyInstance(tClass.getClassLoader(), new Class<?>[]{tClass}, new InvokerHandler());
+    public <T> T getProxy(Class<T> tClass, URL url, Invoker invoker) {
+        return (T) Proxy.newProxyInstance(tClass.getClassLoader(), new Class<?>[]{tClass}, new InvokerHandler(invoker, url));
     }
 
 }

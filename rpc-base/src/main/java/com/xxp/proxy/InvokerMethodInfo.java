@@ -7,4 +7,6 @@ package com.xxp.proxy;
  * @Version V1.0
  **/
 public class InvokerMethodInfo {
+
+
 }

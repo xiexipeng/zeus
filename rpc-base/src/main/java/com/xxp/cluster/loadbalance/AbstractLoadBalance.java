@@ -1,4 +1,4 @@
-package com.xxp.client.loadbalance;
+package com.xxp.cluster.loadbalance;
 
 import com.xxp.common.URL;
 import com.xxp.server.Server;
@@ -23,5 +23,5 @@ public abstract class AbstractLoadBalance {
         return doSelect(serverList,url);
     }
 
-    public abstract Server doSelect(List<Server> serverList, URL url);
+    public abstract Server doSelect(List<Server> serverList,URL url);
 }

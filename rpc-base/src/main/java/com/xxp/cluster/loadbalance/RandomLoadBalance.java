@@ -1,4 +1,4 @@
-package com.xxp.client.loadbalance;
+package com.xxp.cluster.loadbalance;
 
 import com.xxp.common.URL;
 import com.xxp.server.Server;

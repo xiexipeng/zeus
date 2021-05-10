@@ -2,6 +2,7 @@ package com.xxp.common;
 
 import lombok.Data;
 
+import java.lang.reflect.Method;
 import java.util.Map;
 
 /**
@@ -19,9 +20,9 @@ public class URL {
 
     private String serverName;
 
-    private String methodName;
-
     private Long timeout;
+
+    private Method method;
 
     private Class<?>[] argumentTypes;
 
