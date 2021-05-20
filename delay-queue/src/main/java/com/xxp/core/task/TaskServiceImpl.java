@@ -17,9 +17,12 @@ public class TaskServiceImpl extends AbstractTaskService<Boolean> {
 
     @Override
     public Boolean doProcess(Job job) {
-        // TODO 添加任务执行逻辑
 //        log.info("job任务执行完毕, topicId:[{}]", job.getTopicId());
-        log.info("job执行时效比较,{}ms", System.currentTimeMillis() - job.getNextExecuteTime());
+        long interval = System.currentTimeMillis() - job.getNextExecuteTime();
+        log.info("job执行时效比较,{}ms", interval);
+        if (interval > 1000) {
+            log.warn("job执行延时超过1000毫秒, topicId:{}", job.getTopicId());
+        }
         return true;
     }
 

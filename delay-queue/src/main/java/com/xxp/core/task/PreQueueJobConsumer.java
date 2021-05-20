@@ -77,7 +77,7 @@ public class PreQueueJobConsumer implements InitializingBean {
 
     private void doConsumer() throws InterruptedException {
         RBlockingQueue<String> blockingQueue = redissonClient.getBlockingQueue(DelayQueueConstant.PRE_JOB_QUEUE_KEY);
-        String topicId = blockingQueue.pollLastAndOfferFirstTo(DelayQueueConstant.PRE_JOB_BACK_QUEUEU_KEY, 60, TimeUnit.SECONDS);
+        String topicId = blockingQueue.pollLastAndOfferFirstTo(DelayQueueConstant.PRE_JOB_BACK_QUEUE_KEY, 60, TimeUnit.SECONDS);
         if (StringUtils.isEmpty(topicId)) {
             log.info("获取topicId为空");
             return;
@@ -104,7 +104,7 @@ public class PreQueueJobConsumer implements InitializingBean {
                 return false;
             }
             jobPool.remove(topicId);
-            RQueue<String> queue = redissonClient.getQueue(DelayQueueConstant.PRE_JOB_BACK_QUEUEU_KEY);
+            RQueue<String> queue = redissonClient.getQueue(DelayQueueConstant.PRE_JOB_BACK_QUEUE_KEY);
             queue.remove(topicId);
             return true;
         });

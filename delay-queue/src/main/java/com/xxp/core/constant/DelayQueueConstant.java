@@ -26,7 +26,7 @@ public class DelayQueueConstant {
     /**
      * 等待执行任务队列备份，当任务从等待执行队列中取出后，系统宕机，任务可能出现丢失，因此使用BRPOPLPUSH命令将任务进行备份
      */
-    public final static String PRE_JOB_BACK_QUEUEU_KEY = "PRE_JOB_BACK_QUEUE";
+    public final static String PRE_JOB_BACK_QUEUE_KEY = "PRE_JOB_BACK_QUEUE";
 
     /**
      * 调度器分布式锁

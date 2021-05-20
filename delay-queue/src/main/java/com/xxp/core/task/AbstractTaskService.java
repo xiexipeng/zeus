@@ -17,5 +17,11 @@ public abstract class AbstractTaskService<T> implements TaskService {
         return resutl;
     }
 
+    /**
+     * 执行job
+     *
+     * @param job
+     * @return
+     */
     protected abstract T doProcess(Job job);
 }
