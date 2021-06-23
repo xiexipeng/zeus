@@ -24,11 +24,15 @@ public class DefaultHttpClient implements HttpClient {
 
     private static final String BOUNDARY = "--------------------XXP_" + RandomUtil.getRandomString(16);
 
-    private AsyncHttpClient httpClient = new DefaultAsyncHttpClient();
+    private AsyncHttpClient httpClient;
 
     public static final DefaultHttpClient INSTANCE = new DefaultHttpClient();
 
     private DefaultHttpClient() {
+        httpClient = new DefaultAsyncHttpClient();
+    }
+
+    public DefaultHttpClient(HttpClientConfig configBuilder){
 
     }
 
@@ -105,10 +109,10 @@ public class DefaultHttpClient implements HttpClient {
             result.setBodyJSON(response.getResponseBody());
             return result;
         } catch (InterruptedException e) {
-            log.info("调用异常", e);
+            log.error("调用异常", e);
             throw new RuntimeException("调用异常");
         } catch (ExecutionException e) {
-            log.info("调用异常", e);
+            log.error("调用异常", e);
             throw new RuntimeException("调用异常");
         }
     }

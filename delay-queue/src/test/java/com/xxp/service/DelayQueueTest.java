@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 import java.util.Random;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author: xiexipeng@u51.com
@@ -42,19 +39,20 @@ public class DelayQueueTest extends BaseTest {
     @Test
     public void testConcurrentAdd() throws InterruptedException {
         ThreadPoolExecutor executor = new ThreadPoolExecutor(30, 30, 30000L, TimeUnit.MICROSECONDS, new ArrayBlockingQueue(100));
-        CountDownLatch latch = new CountDownLatch(10);
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(10);
         for (int i = 0; i < 10; i++) {
             executor.execute(() -> {
                 Job job = createJob();
                 try {
-                    latch.await();
+                    cyclicBarrier.await();
                     delayQueueService.addJob(job);
-                } catch (InterruptedException e) {
+                } catch (InterruptedException | BrokenBarrierException e) {
                     e.printStackTrace();
                 }
             });
-            latch.countDown();
+
         }
+        executor.shutdown();
         Thread.sleep(2000);
     }
 

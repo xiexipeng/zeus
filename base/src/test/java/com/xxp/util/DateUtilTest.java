@@ -3,7 +3,9 @@ package com.xxp.util;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -66,6 +68,16 @@ public class DateUtilTest {
     @Test
     public void test_truncate(){
         System.out.println(DateUtil.truncate(LocalDateTime.now(),ChronoUnit.HOURS));
+    }
+
+    @Test
+    public void test_minus(){
+        System.out.println(LocalDateTime.now().minusMonths(1).truncatedTo(ChronoUnit.DAYS));
+        System.out.println(DateUtil.parse("2021-02-22 13:30:02","yyyy-MM-dd HH:mm:ss").minusMonths(6).truncatedTo(ChronoUnit.DAYS));
+        LocalDateTime localDateTime = DateUtil.parse("2021-02-22 13:30:02", "yyyy-MM-dd HH:mm:ss").minusMonths(6).truncatedTo(ChronoUnit.DAYS);
+        ZoneId zone = ZoneId.systemDefault();
+        Instant instant = localDateTime.atZone(zone).toInstant();
+        System.out.println(Date.from(instant));
     }
 
     @Test
