@@ -17,17 +17,17 @@ public class AHCTest {
 
     @Test
     public void test(){
-        AsyncHttpClient httpClient = new DefaultAsyncHttpClient();
-        RequestBuilder builder = new RequestBuilder().setUrl("http://localhost:8082/iface-server/api/v1/test/get");
-        ListenableFuture<Response> responseListenableFuture = httpClient.executeRequest(builder.build());
-        try {
-            Response response = responseListenableFuture.get();
-            System.out.println(response.getResponseBody());
-            assert response.getStatusCode() == 200;
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+//        AsyncHttpClient httpClient = new DefaultAsyncHttpClient();
+//        RequestBuilder builder = new RequestBuilder().setUrl("http://localhost:8082/iface-server/api/v1/test/get");
+//        ListenableFuture<Response> responseListenableFuture = httpClient.executeRequest(builder.build());
+//        try {
+//            Response response = responseListenableFuture.get();
+//            System.out.println(response.getResponseBody());
+//            assert response.getStatusCode() == 200;
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        }
     }
 }
