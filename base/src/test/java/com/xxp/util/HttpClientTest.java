@@ -4,10 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.xxp.http.DefaultHttpClient;
 import com.xxp.http.Request;
 import com.xxp.http.Response;
-import com.xxp.util.MapUtil;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 
 /**
@@ -123,6 +121,13 @@ public class HttpClientTest {
         Response response = DefaultHttpClient.INSTANCE.get("http://10.247.23.144:5152/user-data-center/api/v1/label/query/queryWithLabelIdList",
                 JSON.toJSONString(MapUtil.createBuilder().put("userId", "1801100666").put("labelIds", 1).put("userGroup", 1).build()));
         System.out.println(response);
+    }
+
+    public static void main(String[] args) {
+        String url = "https://api.lianlianlvyou.com/v1/wx/product2?Authorization=olgDYsrgB9y0S31_vwa9L_1yg9JQ&timestamp=1619854965719&id=447946&locationid=13&i=wxed8251e55bcaa954&longitude=&latitude=";
+        String base = "https://api.lianlianlvyou.com/wx/city/list?timestamp=1607060901447&ll_client=2&ll_versionCode=1&ll_version=1&Authorization=oo25swO-KY0lqBxiCxp2h75MdE8E&i=wx3623dfa9e7270632&locationid=0";
+        Response response = DefaultHttpClient.INSTANCE.get(url);
+        System.out.println(response.getBodyJSON());
     }
 
 }
