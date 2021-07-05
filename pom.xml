@@ -19,6 +19,7 @@
         <module>delay-queue</module>
         <module>distribute-schedule</module>
         <module>rpc-base</module>
+        <module>distribute-id-generate</module>
     </modules>
 
     <properties>

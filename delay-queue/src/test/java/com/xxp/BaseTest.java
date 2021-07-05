@@ -1,6 +1,6 @@
 package com.xxp;
 
-import com.xxp.core.DelayQueueAppliction;
+import com.xxp.core.DelayQueueApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @description:
  * @Version
  **/
-@SpringBootTest(classes = DelayQueueAppliction.class)
+@SpringBootTest(classes = DelayQueueApplication.class)
 public class BaseTest {
 
 }

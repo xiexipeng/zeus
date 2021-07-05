@@ -12,9 +12,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  **/
 @EnableScheduling
 @SpringBootApplication
-public class DelayQueueAppliction {
+public class DelayQueueApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DelayQueueAppliction.class, args);
+        SpringApplication.run(DelayQueueApplication.class, args);
     }
 }
