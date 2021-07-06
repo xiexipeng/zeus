@@ -5,7 +5,7 @@ import lombok.experimental.UtilityClass;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/28 15:04:02
  * @description: 随机数工具
  * @Version

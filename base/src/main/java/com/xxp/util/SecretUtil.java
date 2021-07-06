@@ -4,7 +4,7 @@ import lombok.experimental.UtilityClass;
 import org.springframework.util.DigestUtils;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/06/17 17:17:54
  * @description: 加密算法相关
  * @Version V1.0

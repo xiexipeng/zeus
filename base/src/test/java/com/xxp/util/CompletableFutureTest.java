@@ -12,7 +12,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/22 11:43:30
  * @description:
  * @Version

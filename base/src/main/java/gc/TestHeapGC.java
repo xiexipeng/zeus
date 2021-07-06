@@ -2,7 +2,7 @@ package gc;
 
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2019/08/31 22:22:13
  * @description: 堆内存GC测试
  * @Version V1.0

@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/16 17:18:01
  * @description: 请求信息
  * @Version V1.0

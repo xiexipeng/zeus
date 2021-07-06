@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/16 17:40:21
  * @description: 加权随机
  * @Version V1.0

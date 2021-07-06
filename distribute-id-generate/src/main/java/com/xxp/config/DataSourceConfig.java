@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/07/02 17:55:29
  * @description: 数据源配置
  * @Version V1.0

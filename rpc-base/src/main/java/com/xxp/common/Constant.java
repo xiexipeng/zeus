@@ -1,7 +1,7 @@
 package com.xxp.common;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/28 17:04:14
  * @description:
  * @Version

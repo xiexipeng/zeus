@@ -1,7 +1,7 @@
 package com.xxp.core.exception;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/03/08 17:30:33
  * @description: 异常重试
  * @Version V1.0

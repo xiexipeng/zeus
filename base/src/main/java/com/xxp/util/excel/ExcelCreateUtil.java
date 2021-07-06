@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Random;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2019/09/22 19:04:14
  * @description: Excel创建工具类
  * @Version V1.0

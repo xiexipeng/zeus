@@ -9,7 +9,7 @@ import org.junit.Test;
 import java.io.FileNotFoundException;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2020/09/28 20:26:09
  * @description: httpclinet测试用例
  * @Version V1.0

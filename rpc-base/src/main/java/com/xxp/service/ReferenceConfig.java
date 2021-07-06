@@ -3,7 +3,7 @@ package com.xxp.service;
 import java.util.Map;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/05/04 15:48:40
  * @description: 服务引用配置，参考Kafka配置设计
  * @Version V1.0

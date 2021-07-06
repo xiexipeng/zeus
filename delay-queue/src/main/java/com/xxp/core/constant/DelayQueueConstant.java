@@ -1,7 +1,7 @@
 package com.xxp.core.constant;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/03/07 20:28:58
  * @description: 延迟队列常量
  * @Version V1.0

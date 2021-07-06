@@ -3,7 +3,7 @@ package com.xxp.core.service;
 import com.xxp.core.dto.Job;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/03/07 17:57:40
  * @description: 延迟队列服务对象
  * @Version V1.0

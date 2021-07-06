@@ -1,7 +1,7 @@
 package gc;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2019/09/11 00:16:12
  * @description: 测试持久代
  * @Version

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2020/05/22 17:36:58
  * @description: 效率较低，内存消耗较大
  * @Version

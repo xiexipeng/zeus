@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2020/09/21 22:22:36
  * @description: HTTP调用client默认实现
  * @Version V1.0

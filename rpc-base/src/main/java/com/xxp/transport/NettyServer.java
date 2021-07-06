@@ -3,7 +3,7 @@ package com.xxp.transport;
 import io.netty.channel.Channel;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/20 10:42:02
  * @description: netty服务
  * @Version V1.0

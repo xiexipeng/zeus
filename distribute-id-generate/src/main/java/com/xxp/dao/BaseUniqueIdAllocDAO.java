@@ -10,7 +10,7 @@ import org.springframework.util.CollectionUtils;
 import java.util.List;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/07/05 16:28:07
  * @description:
  * @Version

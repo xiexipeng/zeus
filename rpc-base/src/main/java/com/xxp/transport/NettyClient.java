@@ -8,7 +8,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/20 10:42:19
  * @description: netty客户端
  * @Version V1.0

@@ -8,7 +8,7 @@ import org.junit.Test;
 import java.util.concurrent.ExecutionException;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2020/10/15 20:55:38
  * @description: asynchttpclient测试
  * @Version

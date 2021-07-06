@@ -3,7 +3,7 @@ package com.xxp.service;
 import org.springframework.beans.factory.InitializingBean;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/05/04 16:07:12
  * @description: 服务提供者初始化
  * @Version V1.0

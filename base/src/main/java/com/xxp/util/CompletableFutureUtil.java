@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 import java.util.function.*;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/22 10:58:34
  * @description: accept与apply的区别：一般accept方法没有返回值，只单纯消费异步结果，apply除了消费结果还可以返回消费的处理结果
  * 方法是否带async：带async的表明其执行由新的线程执行，而不带async的则由其调用方的线程执行

@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.concurrent.*;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/03/16 16:14:50
  * @description: 延迟队列测试用例
  * @Version V1.0

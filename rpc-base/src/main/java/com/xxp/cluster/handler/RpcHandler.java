@@ -1,7 +1,7 @@
 package com.xxp.cluster.handler;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/05/07 23:34:54
  * @description:
  * @Version

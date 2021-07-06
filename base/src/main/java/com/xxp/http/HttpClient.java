@@ -3,7 +3,7 @@ package com.xxp.http;
 import java.util.Map;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2020/09/14 17:40:57
  * @description: HTTP调用client
  * @Version

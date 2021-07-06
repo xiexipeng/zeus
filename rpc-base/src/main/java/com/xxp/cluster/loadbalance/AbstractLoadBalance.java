@@ -6,7 +6,7 @@ import com.xxp.server.Server;
 import java.util.List;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/16 17:07:28
  * @description:
  * @Version

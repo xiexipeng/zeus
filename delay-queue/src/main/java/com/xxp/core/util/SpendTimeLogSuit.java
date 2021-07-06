@@ -7,7 +7,7 @@ import org.springframework.util.StopWatch;
 import java.util.function.Supplier;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/03/16 16:29:41
  * @description: 记录方法执行时间
  * @Version V1.0

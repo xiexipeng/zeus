@@ -11,7 +11,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/03/17 15:52:17
  * @description: 日期工具测试用例
  * @Version V1.0
@@ -31,7 +31,7 @@ public class DateUtilTest {
         Date dateTimeByTimeMillis = DateUtil.getDateTimeByTimeMillis(timeMillis);
         System.out.println(dateTimeByTimeMillis);
     }
-    
+
     @Test
     public void test_getTimeMillisByTime(){
         System.out.println(DateUtil.getTimeMillisByTime(LocalDateTime.now()));

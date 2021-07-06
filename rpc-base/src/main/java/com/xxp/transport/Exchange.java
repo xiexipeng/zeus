@@ -5,7 +5,7 @@ import com.xxp.common.URL;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/20 10:42:49
  * @description: 远程服务调用转换
  * @Version V1.0

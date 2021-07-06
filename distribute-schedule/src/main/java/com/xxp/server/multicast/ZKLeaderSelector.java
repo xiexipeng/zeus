@@ -19,7 +19,7 @@ import javax.annotation.PostConstruct;
 import java.net.SocketException;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/03/28 14:32:57
  * @description: zookeeper选主
  * @Version V1.0

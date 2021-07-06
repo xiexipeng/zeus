@@ -3,7 +3,7 @@ package gc;
 import java.util.Vector;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2019/09/10 23:24:36
  * @description: 最大堆内存: -Xmx5M ,只循环了3次便退出了，还有1M内存在哪？
  * @Version

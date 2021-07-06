@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/05/04 15:59:12
  * @description: 远程服务代理创建工厂类
  * @Version V1.0

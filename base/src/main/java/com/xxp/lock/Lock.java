@@ -3,7 +3,7 @@ package com.xxp.lock;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/27 16:48:45
  * @description:
  * @Version

@@ -5,7 +5,7 @@ import com.xxp.server.Server;
 import io.netty.channel.ChannelFuture;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/20 15:05:10
  * @description:
  * @Version

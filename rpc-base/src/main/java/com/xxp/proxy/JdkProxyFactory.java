@@ -6,7 +6,7 @@ import com.xxp.service.Invoker;
 import java.lang.reflect.Proxy;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/05/05 16:12:17
  * @description:
  * @Version

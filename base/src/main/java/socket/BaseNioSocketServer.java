@@ -1,7 +1,7 @@
 package socket;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/05/19 15:57:17
  * @description:
  * @Version

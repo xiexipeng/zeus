@@ -4,7 +4,7 @@ import com.xxp.core.dto.Job;
 import com.xxp.core.util.SpendTimeLogSuit;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/03/16 16:20:57
  * @description: 任务抽象服务
  * @Version V1.0

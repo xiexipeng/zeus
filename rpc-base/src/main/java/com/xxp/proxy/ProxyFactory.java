@@ -4,7 +4,7 @@ import com.xxp.common.URL;
 import com.xxp.service.Invoker;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/05/04 15:57:32
  * @description: 远程服务代理类
  * @Version V1.0

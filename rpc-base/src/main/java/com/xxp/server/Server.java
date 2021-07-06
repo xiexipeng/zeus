@@ -3,7 +3,7 @@ package com.xxp.server;
 import lombok.Data;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/04/16 17:25:48
  * @description: 服务信息
  * @Version V1.0

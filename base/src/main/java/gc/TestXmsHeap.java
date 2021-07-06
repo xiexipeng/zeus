@@ -3,7 +3,7 @@ package gc;
 import java.util.Vector;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2019/09/11 00:01:30
  * @description: 测试最小堆内存: -Xmx11m -Xms4m -Xmn2 -verbose:gc -XX:+PrintGCDetails
  * @Version

@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/03/24 00:18:58
  * @description: 线程池demo, url:https://www.yuque.com/chiang-zrssv/hr87io/ier2mf
  * @Version V1.0

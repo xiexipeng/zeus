@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/03/08 14:02:59
  * @description: 代执行job消费者执行器
  * @Version V1.0

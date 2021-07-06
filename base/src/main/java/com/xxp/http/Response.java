@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Map;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2020/09/21 22:16:33
  * @description: HTTP请求返回结果
  * @Version V1.0

@@ -1,7 +1,7 @@
 package com.xxp.http;
 
 /**
- * @author: xiexipeng@u51.com
+ * @author: xiexipeng
  * @create: 2021/05/21 16:42:06
  * @description:
  * @Version
